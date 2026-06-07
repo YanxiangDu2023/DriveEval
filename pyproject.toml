@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "driveeval"
+version = "0.1.0"
+description = "Autonomous-driving evaluation and planner-simulation workbench"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "DriveEval Contributors"}]
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.0",
+  "plotly>=5.18"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0"
+]
+torch = [
+  "torch>=2.1"
+]
+vision = [
+  "opencv-python>=4.8"
+]
+sim = [
+  "carla>=0.9.15"
+]
+
+[project.scripts]
+driveeval = "driveeval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
