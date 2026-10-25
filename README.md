@@ -2,6 +2,10 @@
 
 DriveEval is an autonomous-driving evaluation and planner-simulation workbench for deterministic open-loop metrics, scenario slicing, long-tail failure analysis, and closed-loop rollout comparison.
 
+## Dashboard Preview
+
+<img width="1425" height="774" alt="DriveEval interactive dashboard" src="https://github.com/user-attachments/assets/862ca6e3-6b90-4924-83e9-1095b8f30f7b" />
+
 The project is organized around three workflows:
 
 - Open-loop evaluation over scenario records with displacement error, miss rate, time to collision, lane deviation, off-road events, jerk, and curvature.
