@@ -11,13 +11,16 @@ requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "DriveEval Contributors"}]
 dependencies = [
+  "fastapi>=0.115,<1",
   "numpy>=1.26",
   "pandas>=2.0",
-  "plotly>=5.18"
+  "plotly>=5.18",
+  "uvicorn[standard]>=0.34,<1"
 ]
 
 [project.optional-dependencies]
 dev = [
+  "httpx>=0.28,<1",
   "pytest>=8.0"
 ]
 torch = [
@@ -32,6 +35,7 @@ sim = [
 
 [project.scripts]
 driveeval = "driveeval.cli:main"
+driveeval-api = "driveeval.api:run"
 
 [tool.setuptools.packages.find]
 where = ["src"]

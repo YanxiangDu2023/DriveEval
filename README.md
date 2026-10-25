@@ -76,6 +76,40 @@ driveeval rollout \
   --output reports/rollout_metrics.csv
 ```
 
+## Interactive Dashboard
+
+DriveEval includes a local React dashboard backed by a FastAPI service. The dashboard can generate
+deterministic demo scenarios, run all three planners, compare aggregate metrics, inspect individual
+scenes, and play predicted trajectories against the recorded future.
+
+Install the Python and frontend dependencies:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+cd frontend && npm install && npm run build && cd ..
+```
+
+Start the combined API and dashboard server:
+
+```bash
+source .venv/bin/activate
+driveeval-api
+```
+
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000). API documentation is available at
+[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
+
+For frontend development with hot reload, run the API as above and start Vite in a second terminal:
+
+```bash
+cd frontend
+npm run dev
+```
+
+Then open [http://127.0.0.1:5174](http://127.0.0.1:5174).
+
 ## Scenario Format
 
 DriveEval uses newline-delimited JSON records:
